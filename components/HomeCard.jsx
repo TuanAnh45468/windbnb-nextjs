@@ -1,10 +1,14 @@
 import data from "../stays.json";
 import Image from "next/image";
 
-export const HomeCard = () => {
+export const HomeCard = (props) => {
   return (
-    <div className={"grid mobile:grid-cols-1 font-montserrat"}>
-      {data.map((item) => (
+    <div className={"grid mobile:grid-cols-1 mobile:gap-y-[32px] font-montserrat"}>
+      <div className={"flex"}>
+        <span className={"font-bold text-lg"}>Stays in Finland</span>
+        <span className={"text-sm font-medium ml-auto"}>{props.totalStays}+ stays</span>
+      </div>
+      {props.data.map((item) => (
         <div key={item.title} className={"flex flex-col"}>
           <Image
             src={item.photo}
@@ -40,7 +44,7 @@ export const HomeCard = () => {
               <span className={"text-[12px] font-medium text-black"}>{item.rating}</span>
             </div>
           </div>
-          <div className={"text-sm font-bold mb-[32px]"}>{item.title}</div>
+          <div className={"text-sm font-bold"}>{item.title}</div>
         </div>
       ))}
     </div>
