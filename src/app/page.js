@@ -18,7 +18,7 @@ export default function Home() {
     }
 
     return (
-    <main className="mt-[19px] mx-[12px] w-[350px]">
+    <main className="mt-[19px] mx-[12px] w-[350px] desktop:w-[1248px] desktop:mb-[95px]">
       <Header onSearch={handleSearch}></Header>
         <section className={"mt-[37px]"}>
             <HomeCard data={searchResult} totalStays={totalStays}></HomeCard>

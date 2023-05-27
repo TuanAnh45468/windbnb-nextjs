@@ -1,11 +1,10 @@
-import data from "../stays.json";
 import Image from "next/image";
 
 export const HomeCard = (props) => {
   return (
-    <div className={"grid mobile:grid-cols-1 mobile:gap-y-[32px] font-montserrat"}>
-      <div className={"flex"}>
-        <span className={"font-bold text-lg"}>Stays in Finland</span>
+    <div className={"grid mobile:grid-cols-1 desktop:grid-cols-3 desktop:justify-items-end mobile:gap-y-[32px] font-montserrat"}>
+      <div className={"flex desktop:col-start-1 desktop:col-span-3 desktop:w-full"}>
+        <span className={"font-bold text-lg desktop:ml-[64px]"}>Stays in Finland</span>
         <span className={"text-sm font-medium ml-auto"}>{props.totalStays}+ stays</span>
       </div>
       {props.data.map((item) => (
